@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <title>Admin Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212;
+            color: #fff;
+        }
+
+        .sidebar {
+            width: 250px;
+            position: fixed;
+            height: 100%;
+            background: #1e1e1e;
+            padding-top: 20px;
+        }
+
+        .content {
+            margin-left: 260px;
+            padding: 20px;
+        }
+
+        a {
+            color: #bbb;
+            text-decoration: none;
+        }
+
+            a:hover {
+                color: #fff;
+            }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3 class="text-center">Admin Panel</h3>
+        <ul class="nav flex-column">
+            <li class="nav-item"><a href="@Url.Action("Index", "Admin")">Dashboard</a></li>
+            <li class="nav-item"><a href="@Url.Action("Products", "Admin")">Ürünler</a></li>
+            <li class="nav-item"><a href="@Url.Action("Orders", "Admin")">Siparişler</a></li>
+            <li class="nav-item"><a href="@Url.Action("Users", "Admin")">Kullanıcılar</a></li>
+            <li class="nav-item"><a href="@Url.Action("Logout", "Admin")">Çıkış Yap</a></li>
+        </ul>
+    </div>
+
+    <!-- İçerik Alanı -->
+    <div class="content">
+        @RenderBody()
+    </div>
+</body>
+</html>
